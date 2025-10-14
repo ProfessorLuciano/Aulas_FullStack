@@ -13,7 +13,7 @@ let resultado = cadernos + custo
 /*1.	Calculadora de IMC
 Crie um algoritmo que receba o peso e a altura de uma pessoa e 
 calcule o Índice de Massa Corporal (IMC).
-Formula IMC = Peso (kg) / Altura (m) x Altura (m) 
+Formula IMC = Peso (kg) / Altura² (m) 
 */
 
 let peso = 87
