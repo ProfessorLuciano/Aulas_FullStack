@@ -32,13 +32,24 @@ if (temperatura < t1) {
 } else {
     console.log('Está quente!!!!')
 }*/
+/*
 const notaCorte = 7
 let notaAluno = 9
 if(notaAluno >= notaCorte){
     console.log('Está aprovado')
 }else{
     console.log('Está reprovado')
-}
+}*/
+/*
+const base = 100
+var compra = 110
+if (compra > base){
+    let desconto = 10/100
+    let resultado = compra - (compra * desconto) 
+    console.log('A sua compra teve desconto de 10% e o valor é: ' + resultado)
+} else{
+    console.log('A sua compra não teve desconto e o valor é: ' + compra)
+}*/
 
 
 
