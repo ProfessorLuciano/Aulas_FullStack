@@ -1,3 +1,4 @@
+import prismaClient from '../../Prisma/PrismaClient'
 
 interface CadHierarquia {
     nome: string
@@ -5,7 +6,12 @@ interface CadHierarquia {
 
 class HierarquiaServices {
     async cadastrarHierarquia({ nome }: CadHierarquia){
-        console.log(nome)
+        await prismaClient.hierarquia.create({
+            data: {
+                nome: nome
+            }
+        })
+        return ({dados: 'Cadastro Efetuado com Sucesso'})
     }
 }
 

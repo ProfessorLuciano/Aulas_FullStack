@@ -9,6 +9,17 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+model Hierarquia {
+  //id Int @id @default(autoincrement())
+  id   String @id @default(uuid())
+  nome String
+
+  data_criacao DateTime @default(now())
+  data_alteracao DateTime @updatedAt
+
+  @@map("hierarquia")
 }
