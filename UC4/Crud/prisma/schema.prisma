@@ -18,8 +18,26 @@ model Hierarquia {
   id   String @id @default(uuid())
   nome String
 
-  data_criacao DateTime @default(now())
+  data_criacao   DateTime @default(now())
   data_alteracao DateTime @updatedAt
 
+  funcionarios Funcionarios[]
+
   @@map("hierarquia")
+}
+
+model Funcionarios {
+  id     String  @id @default(uuid())
+  nome   String
+  email  String
+  senha  String
+  status Boolean
+
+  data_criacao   DateTime @default(now())
+  data_alteracao DateTime @updatedAt
+
+  hierarquia   Hierarquia @relation(fields: [idHierarquia], references: [id])
+  idHierarquia String
+
+  @@map("funcionarios")
 }
