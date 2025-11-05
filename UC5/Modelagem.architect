@@ -28,7 +28,7 @@
     <column id="COL6" populated="true" UUID="07f15891-ec72-4ce4-90b5-5b866e31f72d" autoIncrement="false" autoIncrementSequenceName="funcionarios_status_seq" defaultValue="1" name="status" nullable="0" physicalName="status" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="16" userDefinedTypeUUID="a26374aa-3026-4bb8-b564-eb2e186dfa5d" >
      <remarks></remarks>
     </column>
-    <column id="COL7" populated="true" UUID="29fb2e47-412d-4986-b1f7-d8ea18f95ef2" autoIncrement="false" autoIncrementSequenceName="funcionarios_id_hierarquia_seq" defaultValue="" name="id_hierarquia" nullable="0" physicalName="id_hierarquia" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL7" populated="true" UUID="29fb2e47-412d-4986-b1f7-d8ea18f95ef2" autoIncrement="false" autoIncrementSequenceName="funcionarios_idHierarquia_seq" defaultValue="" name="idHierarquia" nullable="0" physicalName="idHierarquia" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     </folder>
@@ -372,10 +372,10 @@
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="false"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="true"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="1.0" viewportX="25" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB1" x="1016" y="333" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB10" x="645" y="26" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB29" x="1024" y="24" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
@@ -391,7 +391,7 @@
   <table-link relationship-ref="REL104" pkConnection="0.26548672566371684" fkConnection="0.8" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
   <table-link relationship-ref="REL106" pkConnection="0.5087719298245614" fkConnection="0.4778761061946903" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
   <table-link relationship-ref="REL102" pkConnection="0.826530612244898" fkConnection="0.26785714285714285" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
-  <table-link relationship-ref="REL108" pkConnection="0.5789473684210527" fkConnection="0.4424778761061947" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL108" pkConnection="0.543859649122807" fkConnection="0.4424778761061947" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
  </play-pen>
  <critic-manager>
   <critic-grouping platformType="Generic" enabled="true">
