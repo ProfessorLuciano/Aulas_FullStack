@@ -1,0 +1,107 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1749488877645
+  modified: 1749488877645
+  description: ""
+collection:
+  - name: CRUD
+    meta:
+      id: fld_86653f86978d42e098fc5eb8655b67a4
+      created: 1762191753689
+      modified: 1762191753689
+      sortKey: -1762191753689
+      description: ""
+    children:
+      - name: Hierarquia
+        meta:
+          id: fld_d18416f468bb47ffaa9ea665d55897a0
+          created: 1762191770262
+          modified: 1762191770262
+          sortKey: -1762191770262
+          description: ""
+        children:
+          - url: http://localhost:3333/CadastrarHierarquia
+            name: Cadastrar Hierarquia
+            meta:
+              id: req_4b7417f1da854c8f8b6a78270266d3d5
+              created: 1762191938881
+              modified: 1762192676356
+              isPrivate: false
+              description: ""
+              sortKey: -1762191938881
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"nome": "Vendedores"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Funcionarios
+        meta:
+          id: fld_35c7419ba40b4d7e8c4d5c8b0b96ad3b
+          created: 1762365148064
+          modified: 1762365148064
+          sortKey: -1762365148064
+          description: ""
+        children:
+          - url: http://localhost:3333/CadastrarFuncionarios
+            name: Cadastrar Funcionarios
+            meta:
+              id: req_f622f5d3e68043d78096b5ad4bbe0d21
+              created: 1762365162246
+              modified: 1762374391939
+              isPrivate: false
+              description: ""
+              sortKey: -1762365162246
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"nome": "Luciano",
+                	"email": "luciano@teste.com.br",
+                	"senha": "123456",
+                	"status": true,
+                	"idHierarquia": "7d8c0a1c-87c6-4a3a-adda-eca2ea221cd5"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1749488882399
+    modified: 1749488882399
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1749488882330
+    modified: 1749488882330
+    isPrivate: false
