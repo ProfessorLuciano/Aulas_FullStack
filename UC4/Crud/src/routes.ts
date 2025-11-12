@@ -7,7 +7,11 @@ import { FuncionariosControllers } from './Controllers/Funcionarios/Funcionarios
 const router = Router()
 
 //Criação da Rotas de EndPoint
+//Metodos POST
 router.post('/CadastrarHierarquia', new HierarquiaControllers().cadastrarHierarquia)
 router.post('/CadastrarFuncionarios', new FuncionariosControllers().cadastrarFuncionarios)
+
+//Metodos GET
+router.get('/VisualizarFuncionarios', new FuncionariosControllers().visualizarFuncionarios)
 
 export default router

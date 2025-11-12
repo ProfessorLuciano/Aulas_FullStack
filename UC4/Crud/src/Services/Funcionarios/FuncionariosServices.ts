@@ -21,5 +21,17 @@ class FuncionariosServices {
        })
        return ({dados: 'Cadastro Efetuado com Sucesso'})
     }
+
+    async visualizarFuncionarios(){
+        const resposta = await prismaClient.funcionarios.findMany({
+            select: {
+                id: true,
+                nome: true,
+                email: true,
+                status: true
+            }
+        })
+        return resposta
+    }
 }
 export { FuncionariosServices }

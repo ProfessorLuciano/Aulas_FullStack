@@ -14,5 +14,11 @@ class FuncionariosControllers {
         })
         return res.json(resposta)
     }
+
+    async visualizarFuncionarios(req: Request, res: Response){
+        const enviarDados = new FuncionariosServices()
+        const resposta = await enviarDados.visualizarFuncionarios()
+        return res.json(resposta)
+    }
 }
 export { FuncionariosControllers }
