@@ -2,6 +2,7 @@ import prismaClient from '../../Prisma/PrismaClient'
 
 interface CadastrarFuncionarios {
     nome: string,
+    cpf: string,
     email: string,
     senha: string,
     status: boolean,
@@ -9,10 +10,28 @@ interface CadastrarFuncionarios {
 }
 
 class FuncionariosServices {
-    async cadastrarFuncionarios({nome, email, senha, status, idHierarquia}: CadastrarFuncionarios){
-       await prismaClient.funcionarios.create({
+    async cadastrarFuncionarios({nome, cpf, email, senha, status, idHierarquia}: CadastrarFuncionarios){
+       const cpfExiste = await prismaClient.funcionarios.findFirst({
+            where: {
+                OR:[
+                    {
+                        cpf: cpf
+                    },
+                    {
+                        email: email
+                    }
+                ]
+            }
+       })
+       
+       if(cpfExiste){
+        throw new Error('Cpf/E-mail Já Cadastrados')
+       }
+
+        await prismaClient.funcionarios.create({
             data:{
                 nome: nome,
+                cpf: cpf,
                 email: email,
                 senha: senha,
                 status: status,
