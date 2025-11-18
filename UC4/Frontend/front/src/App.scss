@@ -1,0 +1,17 @@
+.appGeral{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  button{
+    margin: 2rem;
+    background-color: #1900fc;
+    height: 3rem;
+    width: 33%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-width: 0;
+    border-radius: 2rem;
+    cursor: pointer;
+  }
+}

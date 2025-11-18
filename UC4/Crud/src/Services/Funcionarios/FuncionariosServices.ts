@@ -10,10 +10,10 @@ interface CadastrarFuncionarios {
 }
 
 class FuncionariosServices {
-    async cadastrarFuncionarios({nome, cpf, email, senha, status, idHierarquia}: CadastrarFuncionarios){
-       const cpfExiste = await prismaClient.funcionarios.findFirst({
+    async cadastrarFuncionarios({ nome, cpf, email, senha, status, idHierarquia }: CadastrarFuncionarios) {
+        const cpfExiste = await prismaClient.funcionarios.findFirst({
             where: {
-                OR:[
+                OR: [
                     {
                         cpf: cpf
                     },
@@ -22,14 +22,14 @@ class FuncionariosServices {
                     }
                 ]
             }
-       })
-       
-       if(cpfExiste){
-        throw new Error('Cpf/E-mail Já Cadastrados')
-       }
+        })
+
+        if (cpfExiste) {
+            throw new Error('Cpf/E-mail Já Cadastrados')
+        }
 
         await prismaClient.funcionarios.create({
-            data:{
+            data: {
                 nome: nome,
                 cpf: cpf,
                 email: email,
@@ -37,20 +37,30 @@ class FuncionariosServices {
                 status: status,
                 idHierarquia: idHierarquia
             }
-       })
-       return ({dados: 'Cadastro Efetuado com Sucesso'})
+        })
+        return ({ dados: 'Cadastro Efetuado com Sucesso' })
     }
 
-    async visualizarFuncionarios(){
+    async visualizarFuncionarios() {
         const resposta = await prismaClient.funcionarios.findMany({
             select: {
                 id: true,
                 nome: true,
+                cpf: true,
                 email: true,
                 status: true
             }
         })
         return resposta
+    }
+
+    async apagarFuncionarios(id: string) {
+        await prismaClient.funcionarios.delete({
+            where: {
+                id: id
+            }
+        })
+        return ({dados: "Registro Excluido Com Sucesso"})
     }
 }
 export { FuncionariosServices }
