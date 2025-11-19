@@ -55,12 +55,20 @@ class FuncionariosServices {
     }
 
     async apagarFuncionarios(id: string) {
+        const idNaoExiste = await prismaClient.funcionarios.findFirst({
+            where:{
+                id: id
+            }
+        })
+        if(!idNaoExiste){
+            throw new Error('Registro não Encontrado')
+        }
         await prismaClient.funcionarios.delete({
             where: {
                 id: id
             }
         })
-        return ({dados: "Registro Excluido Com Sucesso"})
+        return ({dados: 'Registro Excluido Com Sucesso'})
     }
 }
 export { FuncionariosServices }
