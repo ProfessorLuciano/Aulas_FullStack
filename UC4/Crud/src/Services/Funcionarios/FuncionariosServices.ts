@@ -1,4 +1,5 @@
 import prismaClient from '../../Prisma/PrismaClient'
+import { hash } from 'bcryptjs'
 
 interface CadastrarFuncionarios {
     nome: string,
@@ -7,6 +8,14 @@ interface CadastrarFuncionarios {
     senha: string,
     status: boolean,
     idHierarquia: string
+}
+
+interface AlterarFuncionarios{
+    id: string,
+    nome: string,
+    cpf: string,
+    email: string,
+    status: boolean
 }
 
 class FuncionariosServices {
@@ -28,12 +37,13 @@ class FuncionariosServices {
             throw new Error('Cpf/E-mail Já Cadastrados')
         }
 
+        const senhaCrypt = await hash(senha, 8)
         await prismaClient.funcionarios.create({
             data: {
                 nome: nome,
                 cpf: cpf,
                 email: email,
-                senha: senha,
+                senha: senhaCrypt,
                 status: status,
                 idHierarquia: idHierarquia
             }
@@ -52,6 +62,21 @@ class FuncionariosServices {
             }
         })
         return resposta
+    }
+
+    async alterarFuncionarios({id, nome, cpf, email, status}: AlterarFuncionarios){
+        await prismaClient.funcionarios.update({
+            where:{
+                id: id
+            },
+            data:{
+                nome: nome,
+                cpf: cpf,
+                email: email,
+                status: status
+            }
+        })
+        return ({dados: 'Registro Alterado com Sucesso'})
     }
 
     async apagarFuncionarios(id: string) {

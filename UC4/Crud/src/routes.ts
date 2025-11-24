@@ -14,6 +14,9 @@ router.post('/CadastrarFuncionarios', new FuncionariosControllers().cadastrarFun
 //Metodos GET
 router.get('/VisualizarFuncionarios', new FuncionariosControllers().visualizarFuncionarios)
 
+//Metodos PUT
+router.put('/AlterarFuncionarios', new FuncionariosControllers().alterarFuncionarios)
+
 //Metodos Delete
 router.delete('/ApagarFuncionarios/:id', new FuncionariosControllers().apagarFuncionarios)
 export default router
