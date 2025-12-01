@@ -1,8 +1,9 @@
-.appGeral{
+.appGeral {
   display: flex;
   justify-content: center;
   width: 100%;
-  button{
+
+  button {
     margin: 2rem;
     background-color: #1900fc;
     height: 3rem;
@@ -13,5 +14,62 @@
     border-width: 0;
     border-radius: 2rem;
     cursor: pointer;
+  }
+}
+
+.tabelaGeral {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .dadosTabelas {
+    align-items: center;
+    border: 2px solid var(--preto);
+    width: 95%;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+
+    th {
+      font-size: 2rem;
+      text-align: center;
+      font-weight: bold;
+      border: 2px solid var(--preto);
+      background-color: var(--azul);
+      color: var(--branco);
+      padding: 0.5rem;
+    }
+
+    td {
+      background-color: var(--laranjafraco);
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      font-weight: bold;
+      border: 2px solid var(--preto);
+      text-transform: uppercase;
+      padding: 0.5rem;
+
+    }
+
+    a {
+      font-size: 1.5rem;
+      background-color: transparent;
+      padding: 1rem;
+      color: var(--azul);
+    }
+
+    .corStatusAcampadoPendente {
+      background-color: var(--amarelo);
+    }
+
+    .corStatusAcampadoAtivo {
+      background-color: var(--verde);
+    }
+
+    .corStatusAcampadoInativo {
+      background-color: var(--vermelho);
+    }
   }
 }
