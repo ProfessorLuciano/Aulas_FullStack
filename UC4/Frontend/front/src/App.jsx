@@ -5,7 +5,12 @@ import './App.scss'
 export default function App() {
 
   const [dadosFuncionarios, setDadosFuncionarios] = useState([''])
-  //console.log(dadosFuncionarios)
+  const [nome, setNome] = useState('')
+  const [cpf, setCpf] = useState('')
+  const [email, setEmail] = useState('')
+  const [senha, setSenha] = useState('')
+
+  console.log(dadosFuncionarios)
 
   async function consultarFuncionarios() {
     try {
@@ -17,23 +22,21 @@ export default function App() {
     }
   }
 
-  async function cadastrarFuncionarios() {
+  async function cadastrarFuncionarios(e) {
+    e.preventDefault()
+    const idHierarquia = '93c79849-54da-4d3c-af7a-aa3bc3c180b5'
     try {
-      const nome = 'Luciano custodio'
-      const cpf = '11111111112'
-      const email = 'lucianocustodio@teste.com.br'
-      const senha = '123456'
-      const status = true
-      const idHierarquia = '93c79849-54da-4d3c-af7a-aa3bc3c180b5'
-
       const resposta = await apiLocal.post('/CadastrarFuncionarios', {
         nome,
         cpf,
         email,
         senha,
-        status,
         idHierarquia
       })
+      setNome('')
+      setCpf('')
+      setEmail('')
+      setSenha('')
       console.log(resposta.data.dados)
     } catch (err) {
       console.log(err.response.data.error)
@@ -53,34 +56,66 @@ export default function App() {
   return (
     <>
       <div className='appGeral'>
-        <button onClick={cadastrarFuncionarios}>Cadastrar</button>
-        <button onClick={consultarFuncionarios}>Consultar</button>
-        <button onClick={apagarFuncionarios}>Apagar</button>
-      </div>
-      <div className='tabelaGeral'>
-        <table className='dadosTabelas'>
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Email</th>
-              <th>CPF</th>
-              <th>Hierarquia</th>
-              <th>Status</th>
-              <th>Ações</th>
-            </tr>
-            {dadosFuncionarios.map((item) => {
-              return (
-                <tr>
-                  <td> {item.nome}</td>
-                  <td> {item.email}</td>
-                  <td> {item.cpf}</td>
-                  <td> </td>
-                  <td>{item.status === true ? <span>Ativo</span> : <span>Inativo</span>}</td>
-                </tr>
-              )
-            })}
-          </thead>
-        </table>
+        <div className='appBotoes'>
+          <button onClick={cadastrarFuncionarios}>Cadastrar</button>
+          <button onClick={consultarFuncionarios}>Consultar</button>
+          <button onClick={apagarFuncionarios}>Apagar</button>
+        </div>
+        <div className='tabelaGeral'>
+          <table className='dadosTabelas'>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>CPF</th>
+                <th>Hierarquia</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+              {dadosFuncionarios.map((item) => {
+                return (
+                  <tr>
+                    <td>{item.nome}</td>
+                    <td>{item.email}</td>
+                    <td>{item.cpf}</td>
+                    <td></td>
+                    <td>{item.status === true ? <span>Ativo</span> : <span>Inativo</span>}</td>
+                    <td>Editar - Apagar</td>
+                  </tr>
+                )
+              })}
+            </thead>
+          </table>
+        </div>
+        <div className='appFormulario'>
+          <h1>Formulario de Cadastro</h1>
+          <form>
+            <input
+              type="text"
+              placeholder='Digite Seu Nome'
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder='Digite Seu CPF'
+              value={cpf}
+              onChange={(e) => setCpf(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder='Digite Seu E-Mail '
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder='Digite sua Senha'
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+            />
+          </form>
+        </div>
       </div>
     </>
   )

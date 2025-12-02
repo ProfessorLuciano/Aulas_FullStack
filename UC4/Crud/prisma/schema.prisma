@@ -28,11 +28,11 @@ model Hierarquia {
 
 model Funcionarios {
   id     String  @id @default(uuid())
-  nome   String
+  nome   String 
   cpf    String  @unique
   email  String
   senha  String
-  status Boolean
+  status Boolean @default(true)
 
   data_criacao   DateTime @default(now())
   data_alteracao DateTime @updatedAt
