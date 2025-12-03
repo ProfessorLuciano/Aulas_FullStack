@@ -5,6 +5,7 @@ import './App.scss'
 export default function App() {
 
   const [dadosFuncionarios, setDadosFuncionarios] = useState([''])
+  const [existeDados, setExisteDados] = useState(false)
   const [nome, setNome] = useState('')
   const [cpf, setCpf] = useState('')
   const [email, setEmail] = useState('')
@@ -17,6 +18,7 @@ export default function App() {
       const resposta = await apiLocal.get('/VisualizarFuncionarios')
       //console.log(resposta.data)
       setDadosFuncionarios(resposta.data)
+      setExisteDados(true)
     } catch (err) {
       console.log(err.response.data.error)
     }
@@ -43,9 +45,8 @@ export default function App() {
     }
   }
 
-  async function apagarFuncionarios() {
+  async function apagarFuncionarios(id) {
     try {
-      const id = '384443f3-1dc2-4e8e-ac5e-019653e57df0'
       const resposta = await apiLocal.delete(`/ApagarFuncionarios/${id}`)
       console.log(resposta.data.dados)
     } catch (err) {
@@ -61,32 +62,34 @@ export default function App() {
           <button onClick={consultarFuncionarios}>Consultar</button>
           <button onClick={apagarFuncionarios}>Apagar</button>
         </div>
-        <div className='tabelaGeral'>
-          <table className='dadosTabelas'>
-            <thead>
-              <tr>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>CPF</th>
-                <th>Hierarquia</th>
-                <th>Status</th>
-                <th>Ações</th>
-              </tr>
-              {dadosFuncionarios.map((item) => {
-                return (
-                  <tr>
-                    <td>{item.nome}</td>
-                    <td>{item.email}</td>
-                    <td>{item.cpf}</td>
-                    <td></td>
-                    <td>{item.status === true ? <span>Ativo</span> : <span>Inativo</span>}</td>
-                    <td>Editar - Apagar</td>
-                  </tr>
-                )
-              })}
-            </thead>
-          </table>
-        </div>
+        {existeDados === false ? <span><h1>Sem Dados</h1></span> :
+          <div className='tabelaGeral'>
+            <table className='dadosTabelas'>
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th>CPF</th>
+                  <th>Hierarquia</th>
+                  <th>Status</th>
+                  <th>Ações</th>
+                </tr>
+                {dadosFuncionarios.map((item) => {
+                  return (
+                    <tr>
+                      <td>{item.nome}</td>
+                      <td>{item.email}</td>
+                      <td>{item.cpf}</td>
+                      <td></td>
+                      <td>{item.status === true ? <span>Ativo</span> : <span>Inativo</span>}</td>
+                      <td><button className='button1'>Editar</button> - <button className='button2' onClick={() => apagarFuncionarios(item.id)} >Apagar</button></td>
+                    </tr>
+                  )
+                })}
+              </thead>
+            </table>
+          </div>
+        }
         <div className='appFormulario'>
           <h1>Formulario de Cadastro</h1>
           <form>

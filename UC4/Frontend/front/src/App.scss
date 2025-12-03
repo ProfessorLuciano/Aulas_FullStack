@@ -1,8 +1,16 @@
 .appGeral {
   display: flex;
-  justify-content: center;
+  //justify-content: center;
+  align-items: center;
   flex-direction: column;
   width: 100%;
+
+  span {
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+  }
 
   .appBotoes {
     display: flex;
@@ -57,6 +65,27 @@
         text-transform: uppercase;
         padding: 0.5rem;
 
+        button {
+          cursor: pointer;
+          border-radius: 0.3rem;
+        }
+
+        .button1{
+          background-color: transparent;
+          height: 1.5rem;
+          width: 5rem;
+          color: var(--amarelo);
+          font-weight: bold;
+        }
+        
+        .button2{
+          background-color: transparent;
+          height: 1.5rem;
+          width: 5rem;
+          color: var(--vermelho);
+          font-weight: bold;
+        }
+
       }
 
       a {
@@ -87,18 +116,18 @@
     justify-content: center;
     width: 100%;
 
-    form{
+    form {
       display: flex;
       flex-direction: column;
       width: 40%;
 
-      input{
+      input {
         margin-top: 0.8rem;
         height: 3rem;
         font-size: 1.5rem;
         font-weight: bold;
         text-align: center;
-        border-radius: 0.8rem;       
+        border-radius: 0.8rem;
       }
     }
   }
