@@ -69,6 +69,21 @@ class FuncionariosServices {
         return resposta
     }
 
+    async consultaFuncionarioUnico(id: string){
+        const resposta = await prismaClient.funcionarios.findFirst({
+            where: {
+                id: id
+            },
+            select: {
+                id: true,
+                nome: true,
+                email: true,
+                cpf: true
+            }
+        })
+        return resposta
+    }
+
     async alterarFuncionarios({id, nome, cpf, email, status}: AlterarFuncionarios){
         await prismaClient.funcionarios.update({
             where:{

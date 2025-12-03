@@ -12,6 +12,7 @@ const router = Router()
 router.post('/CadastrarHierarquia', new HierarquiaControllers().cadastrarHierarquia)
 router.post('/CadastrarFuncionarios', new FuncionariosControllers().cadastrarFuncionarios)
 router.post('/LoginFuncionarios', new LoginFuncionariosControllers().loginFuncionarios)
+router.post('/ConsultaFuncionariosUnico', new FuncionariosControllers().consultaFuncionariosUnico)
 
 //Metodos GET
 router.get('/VisualizarFuncionarios', new FuncionariosControllers().visualizarFuncionarios)

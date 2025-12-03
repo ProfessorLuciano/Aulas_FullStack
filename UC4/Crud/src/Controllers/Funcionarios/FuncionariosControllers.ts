@@ -22,6 +22,13 @@ class FuncionariosControllers {
         return res.json(resposta)
     }
 
+    async consultaFuncionariosUnico(req: Request, res: Response) {
+        const { id } = req.body
+        const enviarDados = new FuncionariosServices()
+        const resposta = await enviarDados.consultaFuncionarioUnico(id)
+        return res.json(resposta)
+    }
+
     async alterarFuncionarios(req: Request, res: Response) {
         const { id, nome, cpf, email, status } = req.body
         const enviarDados = new FuncionariosServices()

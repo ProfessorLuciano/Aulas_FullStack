@@ -5,20 +5,25 @@ import './App.scss'
 export default function App() {
 
   const [dadosFuncionarios, setDadosFuncionarios] = useState([''])
-  const [existeDados, setExisteDados] = useState(false)
+  
   const [nome, setNome] = useState('')
   const [cpf, setCpf] = useState('')
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
 
-  console.log(dadosFuncionarios)
+  const [idEdita, setIdEdita] = useState('')
+  const [nomeEdita, setNomeEdita] = useState('')
+  const [cpfEdita, setCpfEdita] = useState('')
+  const [emailEdita, setEmailEdita] = useState('')
+
+
+  //console.log(dadosFuncionarios)
 
   async function consultarFuncionarios() {
     try {
       const resposta = await apiLocal.get('/VisualizarFuncionarios')
       //console.log(resposta.data)
       setDadosFuncionarios(resposta.data)
-      setExisteDados(true)
     } catch (err) {
       console.log(err.response.data.error)
     }
@@ -45,6 +50,30 @@ export default function App() {
     }
   }
 
+  async function consultaFuncionariosUnico(id){
+    const resposta = await apiLocal.post('/ConsultaFuncionariosUnico', {
+      id
+    })
+    setIdEdita(resposta.data.id)
+    setNomeEdita(resposta.data.nome)    
+    setCpfEdita(resposta.data.cpf)    
+    setEmailEdita(resposta.data.email)    
+  }
+
+  async function editaFuncionarios(){
+    const id = idEdita
+    const nome = nomeEdita
+    const cpf = cpfEdita
+    const email = emailEdita
+    const resposta = await apiLocal.put('/AlterarFuncionarios', {
+      id,
+      nome,
+      cpf,
+      email
+    })
+    console.log(resposta)
+  }
+
   async function apagarFuncionarios(id) {
     try {
       const resposta = await apiLocal.delete(`/ApagarFuncionarios/${id}`)
@@ -60,9 +89,8 @@ export default function App() {
         <div className='appBotoes'>
           <button onClick={cadastrarFuncionarios}>Cadastrar</button>
           <button onClick={consultarFuncionarios}>Consultar</button>
-          <button onClick={apagarFuncionarios}>Apagar</button>
-        </div>
-        {existeDados === false ? <span><h1>Sem Dados</h1></span> :
+          <button onClick={editaFuncionarios}>Editar</button>
+        </div>      
           <div className='tabelaGeral'>
             <table className='dadosTabelas'>
               <thead>
@@ -82,14 +110,13 @@ export default function App() {
                       <td>{item.cpf}</td>
                       <td></td>
                       <td>{item.status === true ? <span>Ativo</span> : <span>Inativo</span>}</td>
-                      <td><button className='button1'>Editar</button> - <button className='button2' onClick={() => apagarFuncionarios(item.id)} >Apagar</button></td>
+                      <td><button className='button1' onClick={() => consultaFuncionariosUnico(item.id)}>Editar</button> - <button className='button2' onClick={() => apagarFuncionarios(item.id)} >Apagar</button></td>
                     </tr>
                   )
                 })}
               </thead>
             </table>
           </div>
-        }
         <div className='appFormulario'>
           <h1>Formulario de Cadastro</h1>
           <form>
@@ -118,6 +145,27 @@ export default function App() {
               onChange={(e) => setSenha(e.target.value)}
             />
           </form>
+          <h1>Formulario de Edição</h1>
+          <form>
+            <input
+              type="text"
+              placeholder='Digite Seu Nome'
+              value={nomeEdita}
+              onChange={(e) => setNomeEdita(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder='Digite Seu CPF'
+              value={cpfEdita}
+              onChange={(e) => setCpfEdita(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder='Digite Seu E-Mail '
+              value={emailEdita}
+              onChange={(e) => setEmailEdita(e.target.value)}
+            />            
+          </form>          
         </div>
       </div>
     </>
