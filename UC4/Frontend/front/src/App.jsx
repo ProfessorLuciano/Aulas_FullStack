@@ -15,6 +15,7 @@ export default function App() {
   const [nomeEdita, setNomeEdita] = useState('')
   const [cpfEdita, setCpfEdita] = useState('')
   const [emailEdita, setEmailEdita] = useState('')
+  const [existeDados, setExisteDados] = useState(false)
 
 
   //console.log(dadosFuncionarios)
@@ -24,6 +25,7 @@ export default function App() {
       const resposta = await apiLocal.get('/VisualizarFuncionarios')
       //console.log(resposta.data)
       setDadosFuncionarios(resposta.data)
+      setExisteDados(true)
     } catch (err) {
       console.log(err.response.data.error)
     }
