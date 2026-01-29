@@ -6,6 +6,7 @@ import uploadConfig from './config/multer'
 import { HierarquiaControllers } from './Controllers/Hierarquia/HierarquiaControllers'
 import { FuncionariosControllers } from './Controllers/Funcionarios/FuncionariosControllers'
 import { LoginFuncionariosControllers } from './Controllers/LoginFuncionarios/LoginFuncionariosControllers'
+import { ProdutosControllers } from './Controllers/Produtos/ProdutosControllers'
 
 const router = Router()
 const upload = multer(uploadConfig.upload('./tmp'))
@@ -16,6 +17,7 @@ router.post('/CadastrarHierarquia', new HierarquiaControllers().cadastrarHierarq
 router.post('/CadastrarFuncionarios', new FuncionariosControllers().cadastrarFuncionarios)
 router.post('/LoginFuncionarios', new LoginFuncionariosControllers().loginFuncionarios)
 router.post('/ConsultaFuncionariosUnico', new FuncionariosControllers().consultaFuncionariosUnico)
+router.post('/CadastrarProdutos', new ProdutosControllers().cadastrarProdutos)
 
 //Metodos GET
 router.get('/VisualizarFuncionarios', new FuncionariosControllers().visualizarFuncionarios)

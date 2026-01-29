@@ -242,39 +242,48 @@ collection:
           modified: 1769537506861
           sortKey: -1769537506861
           description: ""
-      - url: http://localhost:3333/ConsultarProdutos
-        name: Visualizar Produtos
-        meta:
-          id: req_e94b7dec80a54f918d4c6e6e4fc1ade2
-          created: 1769537524191
-          modified: 1769538692390
-          isPrivate: false
-          description: ""
-          sortKey: -1765951327462.5
-        method: GET
-        parameters:
-          - id: pair_e2e70fe4358a46ec85c3225653976149
-            name: ""
-            value: ""
-            description: ""
-            disabled: false
-        headers:
-          - name: User-Agent
-            value: insomnia/11.2.0
-            id: pair_1cd5f5aeb30e4654bffab5402fe6b35b
-        authentication:
-          type: bearer
-          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRlM2UzMzQ0LWZlYzktNGY3OC04ZDkzLTY2NTdlOGQ1Nzk1MSIsIm5vbWUiOiJMdWNpYW5vIiwiZW1haWwiOiJsdWNpYW5vQHRlc3RlLmNvbS5iciIsImlhdCI6MTc2OTUzNzczMSwiZXhwIjoxNzY5NTY2NTMxLCJzdWIiOiJkZTNlMzM0NC1mZWM5LTRmNzgtOGQ5My02NjU3ZThkNTc5NTEifQ.A9rcpAP2vGs9xdEnblQZUOMA2zx1Q1X9zmXmzcljIO8
-          prefix: Bearer
-          disabled: true
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
+        children:
+          - url: http://localhost:3333/CadastrarProdutos
+            name: Cadastrar Produtos
+            meta:
+              id: req_3be978199a6e4f7ba6da19beca8e4967
+              created: 1769718555337
+              modified: 1769718832467
+              isPrivate: false
+              description: ""
+              sortKey: -1769718555337
+            method: POST
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_753eb5ef9a3a4e16a49a0faf8ae3737f
+                  name: nome
+                  value: CocaCola
+                  description: ""
+                  disabled: false
+                - id: pair_a117656ad30c4837b32665b1003aa773
+                  name: preco
+                  value: "5.52"
+                  description: ""
+                  disabled: false
+                - id: pair_2ec06fe778c04f43b030c910195d29cc
+                  name: banner
+                  value: ""
+                  description: ""
+                  disabled: false
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
 cookieJar:
   name: Default Jar
   meta:
