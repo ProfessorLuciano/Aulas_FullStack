@@ -1,0 +1,290 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1749488877645
+  modified: 1749488877645
+  description: ""
+collection:
+  - name: CRUD SENAC
+    meta:
+      id: fld_86653f86978d42e098fc5eb8655b67a4
+      created: 1762191753689
+      modified: 1769537499990
+      sortKey: -1762191753689
+      description: ""
+    children:
+      - name: Hierarquia
+        meta:
+          id: fld_d18416f468bb47ffaa9ea665d55897a0
+          created: 1762191770262
+          modified: 1762191770262
+          sortKey: -1762191770262
+          description: ""
+        children:
+          - url: http://localhost:3333/CadastrarHierarquia
+            name: Cadastrar Hierarquia
+            meta:
+              id: req_4b7417f1da854c8f8b6a78270266d3d5
+              created: 1762191938881
+              modified: 1769536704291
+              isPrivate: false
+              description: ""
+              sortKey: -1762191938881
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"nome": "Gerencia"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3333/CadastrarGrupos
+            name: Cadastro Grupo CRUD 2024
+            meta:
+              id: req_0bb2ae4a21df496a9fb5dcef1645a623
+              created: 1764091704150
+              modified: 1764177924609
+              isPrivate: false
+              description: ""
+              sortKey: -1764091704150
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"nome": "Diretores"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Funcionarios
+        meta:
+          id: fld_35c7419ba40b4d7e8c4d5c8b0b96ad3b
+          created: 1762365148064
+          modified: 1762365148064
+          sortKey: -1762365148064
+          description: ""
+        children:
+          - url: http://localhost:3333/CadastrarFuncionarios
+            name: Cadastrar Funcionarios
+            meta:
+              id: req_f622f5d3e68043d78096b5ad4bbe0d21
+              created: 1762365162246
+              modified: 1764701517712
+              isPrivate: false
+              description: ""
+              sortKey: -1762365162246
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"nome": "",
+                	"cpf": "11",
+                	"email": "luciano@teste.com.br",
+                	"senha": "123456",
+                	"status": true,
+                	"idHierarquia": "93c79849-54da-4d3c-af7a-aa3bc3c180b5"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3333/VisualizarFuncionarios
+            name: Visualizar Funcionarios
+            meta:
+              id: req_e682249abf8f45ea91d8e91998375fe7
+              created: 1762969903257
+              modified: 1763485194638
+              isPrivate: false
+              description: ""
+              sortKey: -1762969903257
+            method: GET
+            parameters:
+              - id: pair_e2e70fe4358a46ec85c3225653976149
+                name: ""
+                value: ""
+                description: ""
+                disabled: false
+            headers:
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3333/ApagarFuncionarios/47a909eb-92c2-428b-b13b-ddb17a5748ad
+            name: Apagar Funcionario
+            meta:
+              id: req_6cfd465c191747f6b255bfa4eff8bfc7
+              created: 1763485890834
+              modified: 1763487287683
+              isPrivate: false
+              description: ""
+              sortKey: -1763485890834
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3333/AlterarFuncionarios
+            name: Alterar Funcionarios
+            meta:
+              id: req_aab2bf06beed439ca8efc97889f36f70
+              created: 1764004585061
+              modified: 1764015396497
+              isPrivate: false
+              description: ""
+              sortKey: -1764004585061
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"id": "4ed6dc27-3426-412e-9653-594be8dd7822",
+                	"nome": "Luciano",
+                	"cpf": "111111111112",
+                	"email": "luciano.teste@teste.com.br",
+                	"status": false
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3333/LoginFuncionarios
+            name: Login Funcionarios
+            meta:
+              id: req_e889a79b951d4d3fbef3818b51f931ca
+              created: 1764179607409
+              modified: 1769542828988
+              isPrivate: false
+              description: ""
+              sortKey: -1762278550563.5
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email": "luciano.silva@teste.com.br",
+                	"senha": "123456"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_bc0676d027fd4d53bcfe0dad81035b6c
+              - name: User-Agent
+                value: insomnia/11.2.0
+                id: pair_950973a98e6e450dacf02377981de4e7
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Produtos
+        meta:
+          id: fld_555847d252914b06ad1e628646b19dc6
+          created: 1769537506861
+          modified: 1769537506861
+          sortKey: -1769537506861
+          description: ""
+      - url: http://localhost:3333/ConsultarProdutos
+        name: Visualizar Produtos
+        meta:
+          id: req_e94b7dec80a54f918d4c6e6e4fc1ade2
+          created: 1769537524191
+          modified: 1769538692390
+          isPrivate: false
+          description: ""
+          sortKey: -1765951327462.5
+        method: GET
+        parameters:
+          - id: pair_e2e70fe4358a46ec85c3225653976149
+            name: ""
+            value: ""
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+            id: pair_1cd5f5aeb30e4654bffab5402fe6b35b
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRlM2UzMzQ0LWZlYzktNGY3OC04ZDkzLTY2NTdlOGQ1Nzk1MSIsIm5vbWUiOiJMdWNpYW5vIiwiZW1haWwiOiJsdWNpYW5vQHRlc3RlLmNvbS5iciIsImlhdCI6MTc2OTUzNzczMSwiZXhwIjoxNzY5NTY2NTMxLCJzdWIiOiJkZTNlMzM0NC1mZWM5LTRmNzgtOGQ5My02NjU3ZThkNTc5NTEifQ.A9rcpAP2vGs9xdEnblQZUOMA2zx1Q1X9zmXmzcljIO8
+          prefix: Bearer
+          disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1749488882399
+    modified: 1749488882399
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1749488882330
+    modified: 1749488882330
+    isPrivate: false
