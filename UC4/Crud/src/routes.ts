@@ -1,4 +1,6 @@
 import { Router } from 'express'
+import multer from 'multer'
+import uploadConfig from './config/multer'
 
 //Importação do Controladores
 import { HierarquiaControllers } from './Controllers/Hierarquia/HierarquiaControllers'
@@ -6,6 +8,7 @@ import { FuncionariosControllers } from './Controllers/Funcionarios/Funcionarios
 import { LoginFuncionariosControllers } from './Controllers/LoginFuncionarios/LoginFuncionariosControllers'
 
 const router = Router()
+const upload = multer(uploadConfig.upload('./tmp'))
 
 //Criação da Rotas de EndPoint
 //Metodos POST
