@@ -17,10 +17,11 @@ router.post('/CadastrarHierarquia', new HierarquiaControllers().cadastrarHierarq
 router.post('/CadastrarFuncionarios', new FuncionariosControllers().cadastrarFuncionarios)
 router.post('/LoginFuncionarios', new LoginFuncionariosControllers().loginFuncionarios)
 router.post('/ConsultaFuncionariosUnico', new FuncionariosControllers().consultaFuncionariosUnico)
-router.post('/CadastrarProdutos', new ProdutosControllers().cadastrarProdutos)
+router.post('/CadastrarProdutos', upload.single('file'), new ProdutosControllers().cadastrarProdutos)
 
 //Metodos GET
 router.get('/VisualizarFuncionarios', new FuncionariosControllers().visualizarFuncionarios)
+router.get('/VisualizarProdutos', new ProdutosControllers().visualizarProdutos)
 
 //Metodos PUT
 router.put('/AlterarFuncionarios', new FuncionariosControllers().alterarFuncionarios)
