@@ -1,5 +1,6 @@
 import prismaClient from '../../Prisma/PrismaClient'
 import { compare } from 'bcryptjs'
+import { sign } from 'jsonwebtoken'
 
 interface LoginFuncionarios {
     email: string,
@@ -13,16 +14,31 @@ class LoginFuncionariosServices {
                 email: email
             }
         })
-        //console.log(emailExiste)
+
         if (!emailExiste) {
             throw new Error('Login Incorreto')
         }
         const senhaCrypt = await compare(senha, emailExiste.senha)
-        //console.log(senhaCrypt)
-        if(senhaCrypt){
-            return ({dados: 'Login Efetuado com sucesso'})
-        }else{
+        if (!senhaCrypt) {
             throw new Error('Login Incorreto')
+        }
+
+        const token = sign({
+            id: emailExiste.id,
+            nome: emailExiste.nome,
+            email: emailExiste.email
+        },
+            process.env.JWT_SECRETO,
+            {
+                subject: emailExiste.id,
+                expiresIn: '8h'
+            }
+        )
+        return{
+            id: emailExiste.id,
+            nome: emailExiste.nome,
+            email: emailExiste.email,
+            token: token
         }
     }
 }
