@@ -8,6 +8,8 @@ import { FuncionariosControllers } from './Controllers/Funcionarios/Funcionarios
 import { LoginFuncionariosControllers } from './Controllers/LoginFuncionarios/LoginFuncionariosControllers'
 import { ProdutosControllers } from './Controllers/Produtos/ProdutosControllers'
 
+import { estaAutenticado } from './middleware/estaAutenticado'
+
 const router = Router()
 const upload = multer(uploadConfig.upload('./tmp'))
 
@@ -20,7 +22,7 @@ router.post('/ConsultaFuncionariosUnico', new FuncionariosControllers().consulta
 router.post('/CadastrarProdutos', upload.single('file'), new ProdutosControllers().cadastrarProdutos)
 
 //Metodos GET
-router.get('/VisualizarFuncionarios', new FuncionariosControllers().visualizarFuncionarios)
+router.get('/VisualizarFuncionarios', estaAutenticado, new FuncionariosControllers().visualizarFuncionarios)
 router.get('/VisualizarProdutos', new ProdutosControllers().visualizarProdutos)
 
 //Metodos PUT

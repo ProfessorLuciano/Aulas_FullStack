@@ -107,11 +107,10 @@ export default function App() {
                 {dadosFuncionarios.map((item) => {
                   return (
                     <tr>
-                      <td>{item.nome}</td>
                       <td>{item.email}</td>
                       <td>{item.cpf}</td>
-                      <td></td>
                       <td>{item.status === true ? <span>Ativo</span> : <span>Inativo</span>}</td>
+                      <td></td>
                       <td><button className='button1' onClick={() => consultaFuncionariosUnico(item.id)}>Editar</button> - <button className='button2' onClick={() => apagarFuncionarios(item.id)} >Apagar</button></td>
                     </tr>
                   )
