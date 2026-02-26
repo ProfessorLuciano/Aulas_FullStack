@@ -1,0 +1,16 @@
+.conteinerCabecalhoGeral{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #f703ef;
+
+    a{
+        font-weight: bold;
+        font-size: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 1rem 0 1rem 0.5rem;
+        color: #FFFFFF;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
