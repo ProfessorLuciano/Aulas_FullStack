@@ -5,6 +5,7 @@ export default function CabecalhoA(){
         <>
         <div>
             <h1>Cabeçalho Autenticado</h1>
+            <button>Sair</button>
         </div>
         </>
     )
