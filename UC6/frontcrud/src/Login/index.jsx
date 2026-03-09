@@ -1,8 +1,10 @@
-import { useState } from 'react'
-import apiLocal from '../Api/apiLocal'
+import { useContext, useState } from 'react'
+import { AutenticadoContexto } from '../Contexts/AuthContexts'
 import './login.estilo.scss'
 
 export default function Login() {
+
+    const { logarFuncionarios } = useContext(AutenticadoContexto)
 
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
@@ -10,11 +12,8 @@ export default function Login() {
     async function logarBackend(e) {
         try {
             e.preventDefault()
-            const resposta = await apiLocal.post('/LoginFuncionarios', {
-                email,
-                senha
-            })
-            console.log(resposta)
+            await logarFuncionarios(email, senha)
+
         } catch (err) {
             console.log(err.error)
         }
