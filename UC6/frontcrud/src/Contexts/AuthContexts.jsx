@@ -12,6 +12,27 @@ export default function AuthProvider({ children }) {
 
     const autenticado = !!tokenT
 
+    async function verificaToken(){
+        const iToken = localStorage.getItem('@token')
+        if(!iToken){
+            setTokenT(false)
+            return
+        }
+        const tokenU = JSON.parse(iToken)
+        setToken(tokenU)
+        try {
+            const resposta = await apiLocal.get('/VerificaToken', {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+            console.log(resposta)
+        } catch (err) {
+            console.log(err)
+        }
+
+    }
+
     async function logarFuncionarios(email, senha) {
         try {
             const resposta = await apiLocal.post('/LoginFuncionarios', {

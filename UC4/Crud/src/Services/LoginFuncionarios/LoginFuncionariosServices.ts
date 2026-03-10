@@ -41,6 +41,19 @@ class LoginFuncionariosServices {
             token: token
         }
     }
+
+    async verificaToken(id: string){
+        const resposta = await prismaClient.funcionarios.findFirst({
+            where: {
+                id: id
+            },
+            select: {
+                id: true,
+                nome: true
+            }
+        })
+        return resposta
+    }
 }
 
 export { LoginFuncionariosServices }
