@@ -11,8 +11,8 @@ export function estaAutenticado(
     next: NextFunction
 ) {
     const autToken = req.headers.authorization
-    if(!autToken){
-        return res.json({dados: 'Token Inexistente'})
+    if (!autToken) {
+        return res.json({ dados: 'Token Inexistente' })
     }
     const [, token] = autToken.split(' ')
     try {
@@ -23,6 +23,6 @@ export function estaAutenticado(
         req.usuarioId = sub
         return next()
     } catch (err) {
-        return res.json({dados: 'Token Inválido'})
+        return res.json({ dados: 'Token Inválido' })
     }
 }

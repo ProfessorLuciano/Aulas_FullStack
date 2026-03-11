@@ -26,7 +26,9 @@ export default function AuthProvider({ children }) {
                     Authorization: `Bearer ${token}`
                 }
             })
-            console.log(resposta)
+            if(resposta.data.id){
+                setTokenT(true)
+            }
         } catch (err) {
             console.log(err)
         }
@@ -51,7 +53,7 @@ export default function AuthProvider({ children }) {
 
 
     return (
-        <AutenticadoContexto.Provider value={({ logarFuncionarios, autenticado })}>
+        <AutenticadoContexto.Provider value={({ logarFuncionarios, autenticado, verificaToken })}>
             {children}
         </AutenticadoContexto.Provider>
     )

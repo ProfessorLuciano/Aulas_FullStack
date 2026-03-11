@@ -4,7 +4,8 @@ import './login.estilo.scss'
 
 export default function Login() {
 
-    const { logarFuncionarios } = useContext(AutenticadoContexto)
+    const { logarFuncionarios, verificaToken } = useContext(AutenticadoContexto)
+    verificaToken()
 
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
@@ -17,7 +18,7 @@ export default function Login() {
         } catch (err) {
             console.log(err.error)
         }
-    }
+    }    
 
     return (
         <>
