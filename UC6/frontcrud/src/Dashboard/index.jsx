@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from 'react'
 import { AutenticadoContexto } from '../Contexts/AuthContexts'
-
+import { Link } from 'react-router-dom'
 
 export default function Dashboard() {
 
@@ -25,8 +25,10 @@ export default function Dashboard() {
             <div>
                 <h1>Dashboard Funcionários</h1>
                 <h1>Seja Bem Vindo {nome.toUpperCase()}</h1>
+                <Link to='/CadastrarProdutos'>Cadastrar Produtos</Link>
                 <button onClick={sairSistema}>Sair</button>
             </div>
+           
         </>
     )
 }
