@@ -12,12 +12,12 @@ export default function VisualizarProdutos() {
     useEffect(() => {
         async function receberDados() {
             try {
-                const resposta = await apiLocal.get('/VisualizarProdutos',{
+                const resposta = await apiLocal.get('/VisualizarProdutos', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
                 })
-                console.log(resposta)
+                setRecebeDados(resposta.data)
             } catch (err) {
                 console.log(err)
             }
@@ -29,6 +29,17 @@ export default function VisualizarProdutos() {
         <>
             <div>
                 <h1>Visualizar Produtos</h1>
+                {recebeDados.map((item) => {
+                    return (
+                        <>
+                            <div>
+                                <span>{item.banner}</span><br />
+                                <span>{item.nome}</span><br />
+                                <span>{item.preco}</span><br />
+                            </div>
+                        </>
+                    )
+                })}
             </div>
         </>
     )
