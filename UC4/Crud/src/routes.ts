@@ -19,11 +19,11 @@ router.post('/CadastrarHierarquia', new HierarquiaControllers().cadastrarHierarq
 router.post('/CadastrarFuncionarios', new FuncionariosControllers().cadastrarFuncionarios)
 router.post('/LoginFuncionarios', new LoginFuncionariosControllers().loginFuncionarios)
 router.post('/ConsultaFuncionariosUnico', new FuncionariosControllers().consultaFuncionariosUnico)
-router.post('/CadastrarProdutos', upload.single('file'), new ProdutosControllers().cadastrarProdutos)
+router.post('/CadastrarProdutos', estaAutenticado, upload.single('file'), new ProdutosControllers().cadastrarProdutos)
 
 //Metodos GET
 router.get('/VisualizarFuncionarios', estaAutenticado, new FuncionariosControllers().visualizarFuncionarios)
-router.get('/VisualizarProdutos', new ProdutosControllers().visualizarProdutos)
+router.get('/VisualizarProdutos', estaAutenticado, new ProdutosControllers().visualizarProdutos)
 router.get('/VerificaToken', estaAutenticado, new LoginFuncionariosControllers().verificaToken)
 
 //Metodos PUT

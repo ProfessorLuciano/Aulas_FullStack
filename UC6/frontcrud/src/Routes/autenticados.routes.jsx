@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import CabecalhoA from '../CabecalhoA'
 import Dashboard from '../Dashboard'
 import CadastrarProdutos from '../CadastrarProdutos'
+import VisualizarProdutos from '../VisualizarProdutos'
 
 export default function Autenticados() {
     return (
@@ -12,6 +13,7 @@ export default function Autenticados() {
             <Routes>
                 <Route path='/' element={<Dashboard />} />
                 <Route path='/CadastrarProdutos' element={<CadastrarProdutos />} />
+                <Route path='/VisualizarProdutos' element={<VisualizarProdutos />} />
 
                 <Route path='*' element={<Dashboard />} />
             </Routes>
