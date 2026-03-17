@@ -33,9 +33,9 @@ export default function VisualizarProdutos() {
                     return (
                         <>
                             <div>
-                                <span>{item.banner}</span><br />
+                                <img style={{width: '5rem'}} src={`http://localhost:3333/files/${item.banner}`} alt="" /><br />
                                 <span>{item.nome}</span><br />
-                                <span>{item.preco}</span><br />
+                                <span>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(item.preco)}</span><br />
                             </div>
                         </>
                     )
