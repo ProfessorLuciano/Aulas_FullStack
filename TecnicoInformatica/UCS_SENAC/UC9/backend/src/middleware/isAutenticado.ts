@@ -23,7 +23,7 @@ export function isAutenticado(
     try {
         const { sub } = verify(
             token,
-            process.env.JWT_SECRET
+            process.env.JWT_SECRETO
             ) as Payload
             req.user_id = sub
             return next()
