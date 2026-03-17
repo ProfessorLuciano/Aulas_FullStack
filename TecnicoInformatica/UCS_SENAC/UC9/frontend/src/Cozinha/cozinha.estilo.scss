@@ -1,0 +1,169 @@
+.containerCozinha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .h1Cozinha {
+        color: #ff7b00;
+        font-size: 6rem;
+        font-weight: bold;
+    }
+    .h1Pedidos {
+        color: #0b53ee;
+        font-size: 5rem;
+        font-weight: bold;
+    }
+    .h1SPedidos {
+        color: #cb0f0f;
+        font-size: 4rem;
+        font-weight: bold;
+    }
+
+    .buttonDashboard {
+        margin-top: 1rem;
+        height: 40;
+        width: 10%;
+        border-radius: 0.5rem;
+        background-color: #0808F5;
+        border-width: 0;
+        color: #FFFFFF;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+}
+
+.mapProdutos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .cardProdutos {
+        padding: 0.5rem;
+        border-radius: 0.32rem;
+        box-shadow: 0.44rem 0.44rem 0.83rem 0rem rgb(9, 209, 35);
+        padding: 1.9rem;
+        margin: 1.25rem;
+        width: 10rem;
+        height: 10rem;
+        transition: all 0.5s ease-out;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+        
+            font-size: 6rem;
+            font-weight: bold;
+            margin: 2rem;
+        }
+    }
+}
+
+.containerModarItens{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        background-color: #0431d3;
+        width: 100%;
+        text-align: center;
+        border-radius: 0.4rem;
+        padding: 1rem;
+        color: #fefefe;
+        font-weight: bold;
+        font-size: 5rem;
+    }
+
+    .pedidoItensTabela {
+        border: 2px solid #000000;
+        width: 60%;
+        margin-top: 1rem;
+
+        th {
+            font-size: 2rem;
+            text-align: center;
+            font-weight: bold;
+            border: 2px solid #000000;
+            color: #000000;
+            background-color: #f7cf08;
+        }
+
+        td {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            font-weight: bold;
+            background-color: #f77808;
+            color: #FFFFFF;
+            border: 2px solid #000000;
+        }
+
+        .linkAceitar {
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            font-weight: bold;
+            background-color: #f77808;
+            color: #FFFFFF;
+        }
+    }
+
+    .botoesAcoesItensPedido {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        .botaoIniciarPedido {
+            margin: 1rem;
+            outline: none;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            height: 4rem;
+            width: 25%;
+            border-radius: 0.5rem;
+            background-color: #ee8814;
+            color: #FFFFFF;
+            border-width: 0;
+        }
+
+        .botaoFecharSemFinalizar {
+            margin: 1rem;
+            outline: none;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            height: 4rem;
+            width: 25%;
+            border-radius: 0.5rem;
+            background-color: #1443ee;
+            color: #FFFFFF;
+            border-width: 0;
+        }
+
+        .botaoFecharFinalizando {
+            outline: none;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            height: 4rem;
+            width: 25%;
+            border-radius: 0.5rem;
+            background-color: #c41818;
+            color: #FFFFFF;
+            border-width: 0;
+        }
+    }
+}

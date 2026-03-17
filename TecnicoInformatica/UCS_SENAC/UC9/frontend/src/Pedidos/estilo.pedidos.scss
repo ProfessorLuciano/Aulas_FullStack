@@ -1,0 +1,174 @@
+.containerPedidos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        background-color: #0431d3;
+        width: 100%;
+        text-align: center;
+        border-bottom-left-radius: 0.4rem;
+        border-bottom-right-radius: 0.4rem;
+        padding: 1rem;
+        color: #fefefe;
+        font-weight: bold;
+        font-size: 5rem;
+    }
+
+    select {
+        height: 4rem;
+        width: 40%;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        border-radius: 0.5rem;
+    }
+
+    .botaoSelectPedido {
+        outline: none;
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 2rem;
+        font-weight: bold;
+        height: 4rem;
+        width: 20%;
+        border-radius: 0.5rem;
+        background-color: #1443ee;
+        color: #FFFFFF;
+        border-width: 0;
+    }
+
+}
+
+.containerModalItensPedidos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        background-color: #09ec7b;
+        width: 100%;
+        text-align: center;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        color: #fefefe;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+
+    h2 {
+        background-color: #ebb208;
+        width: 40%;
+        text-align: center;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        color: #fefefe;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        select {
+            margin: 1rem;
+            height: 3rem;
+            width: 40%;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 0.5rem;
+        }
+
+        input {
+            height: 3rem;
+            width: 30%;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 0.5rem;
+            margin: 1rem;
+        }
+
+        .botaoAddItem {
+            outline: none;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: bold;
+            height: 2rem;
+            width: 40%;
+            border-radius: 0.5rem;
+            background-color: #1443ee;
+            color: #FFFFFF;
+            border-width: 0;
+        }
+    }
+
+    .botoesAcoesPedido {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        .botaoRealizarPedido {
+            margin: 1rem;
+            outline: none;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            height: 4rem;
+            width: 30%;
+            border-radius: 0.5rem;
+            background-color: #1443ee;
+            color: #FFFFFF;
+            border-width: 0;
+        }
+
+        .botaoExcluirPedido {
+            outline: none;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            height: 4rem;
+            width: 30%;
+            border-radius: 0.5rem;
+            background-color: #c41818;
+            color: #FFFFFF;
+            border-width: 0;
+        }
+    }
+
+    .pedidosItensTabela {
+        border: 2px solid #000000;
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        th {
+            font-size: 2rem;
+            text-align: center;
+            font-weight: bold;
+            border: 2px solid #000000;
+            color: #000000;
+            background-color: #f7cf08;
+        }
+
+        td {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            font-weight: bold;
+            background-color: #f77808;
+            color: #FFFFFF;
+            border: 2px solid #000000;
+        }
+
+        a {
+            background-color: #f77808;
+            color: #f7f4f4;
+        }
+    }
+}

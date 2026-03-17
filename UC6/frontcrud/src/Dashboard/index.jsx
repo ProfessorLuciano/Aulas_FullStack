@@ -25,7 +25,7 @@ export default function Dashboard() {
             <div>
                 <h1>Dashboard Funcionários</h1>
                 <h1>Seja Bem Vindo {nome.toUpperCase()}</h1>
-                <Link to='/CadastrarProdutos'>Cadastrar Produtos</Link>
+                <Link to='/CadastrarProdutos'>Cadastrar Produtos</Link><br />
                 <button onClick={sairSistema}>Sair</button>
             </div>
            
