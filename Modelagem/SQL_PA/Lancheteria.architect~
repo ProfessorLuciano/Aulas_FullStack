@@ -211,16 +211,16 @@
   </table>
   <relationships>
    <relationship id="REL59" populated="true" UUID="82dcd3ae-5145-4556-bdbf-b2d377935a9b" deferrability="7" deleteRule="3" fk-table-ref="TAB39" fkCardinality="7" identifying="false" name="usuarios_vendas_fk" physicalName="usuarios_vendas_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP60" populated="true" UUID="9301a670-6513-4c76-b180-454072d43878" fk-column-ref="COL47" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+    <column-mapping id="CMP60" populated="true" UUID="b71b0da8-1612-4bce-aea3-48e4ce821846" fk-column-ref="COL47" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
    <relationship id="REL61" populated="true" UUID="16070ec2-cb2b-4ae7-94d2-4ea6f55bbc6b" deferrability="7" deleteRule="3" fk-table-ref="TAB50" fkCardinality="7" identifying="false" name="produtos_itens_vendas_fk" physicalName="produtos_itens_vendas_fk" pk-table-ref="TAB12" pkCardinality="7" updateRule="3" >
-    <column-mapping id="CMP62" populated="true" UUID="f7b8f7fb-0940-4f36-94fa-bd4b2d00b5ba" fk-column-ref="COL53" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL13" />
+    <column-mapping id="CMP62" populated="true" UUID="292f057d-1cbf-48c1-b25f-9316a8eedf84" fk-column-ref="COL53" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL13" />
    </relationship>
    <relationship id="REL63" populated="true" UUID="48b2c4bc-1d54-4e65-af00-421fad60554a" deferrability="7" deleteRule="3" fk-table-ref="TAB39" fkCardinality="7" identifying="false" name="clientes_vendas_fk" physicalName="clientes_vendas_fk" pk-table-ref="TAB25" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP64" populated="true" UUID="420e4b5e-36f5-45f5-ac86-b58556b0269c" fk-column-ref="COL46" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL26" />
+    <column-mapping id="CMP64" populated="true" UUID="b68bf850-b322-4d17-8358-8c4574eea83f" fk-column-ref="COL46" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL26" />
    </relationship>
    <relationship id="REL65" populated="true" UUID="b4d6ef0a-e539-4454-850b-78deeaf8a410" deferrability="7" deleteRule="3" fk-table-ref="TAB50" fkCardinality="7" identifying="false" name="vendas_itens_vendas_fk" physicalName="vendas_itens_vendas_fk" pk-table-ref="TAB39" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP66" populated="true" UUID="cbd25518-41f7-4d3e-9d92-16c52142fc03" fk-column-ref="COL52" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL40" />
+    <column-mapping id="CMP66" populated="true" UUID="c641e8e2-1d4a-431f-bac8-f642d1c84da4" fk-column-ref="COL52" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL40" />
    </relationship>
   </relationships>
  </target-database>
