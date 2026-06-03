@@ -217,23 +217,23 @@
     <column-mapping id="CMP62" populated="true" UUID="292f057d-1cbf-48c1-b25f-9316a8eedf84" fk-column-ref="COL53" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL13" />
    </relationship>
    <relationship id="REL63" populated="true" UUID="48b2c4bc-1d54-4e65-af00-421fad60554a" deferrability="7" deleteRule="3" fk-table-ref="TAB39" fkCardinality="7" identifying="false" name="clientes_vendas_fk" physicalName="clientes_vendas_fk" pk-table-ref="TAB25" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP64" populated="true" UUID="b68bf850-b322-4d17-8358-8c4574eea83f" fk-column-ref="COL46" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL26" />
+    <column-mapping id="CMP64" populated="true" UUID="5deeb68b-6b50-4b26-8541-120d6181f68b" fk-column-ref="COL46" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL26" />
    </relationship>
    <relationship id="REL65" populated="true" UUID="b4d6ef0a-e539-4454-850b-78deeaf8a410" deferrability="7" deleteRule="3" fk-table-ref="TAB50" fkCardinality="7" identifying="false" name="vendas_itens_vendas_fk" physicalName="vendas_itens_vendas_fk" pk-table-ref="TAB39" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP66" populated="true" UUID="c641e8e2-1d4a-431f-bac8-f642d1c84da4" fk-column-ref="COL52" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL40" />
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="false"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="true"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
-  <table-pane table-ref="TAB1" x="1452" y="403" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="true"/>
-  <table-pane table-ref="TAB12" x="664" y="294" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="true"/>
-  <table-pane table-ref="TAB25" x="916" y="32" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB39" x="1372" y="32" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="true"/>
-  <table-pane table-ref="TAB50" x="1124" y="281" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="true"/>
-  <table-link relationship-ref="REL63" pkConnection="0.463768115942029" fkConnection="0.5594405594405595" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-pane table-ref="TAB1" x="1079" y="521" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="true"/>
+  <table-pane table-ref="TAB12" x="291" y="412" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="true"/>
+  <table-pane table-ref="TAB25" x="543" y="150" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="true"/>
+  <table-pane table-ref="TAB39" x="999" y="150" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="true"/>
+  <table-pane table-ref="TAB50" x="751" y="399" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="true"/>
+  <table-link relationship-ref="REL63" pkConnection="0.463768115942029" fkConnection="0.48427672955974843" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL59" pkConnection="0.44711538461538464" fkConnection="0.5393258426966292" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
   <table-link relationship-ref="REL61" pkConnection="0.4712041884816754" fkConnection="0.5275590551181102" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL65" pkConnection="0.16104868913857678" fkConnection="0.8068669527896996" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
