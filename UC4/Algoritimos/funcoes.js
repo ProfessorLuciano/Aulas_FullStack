@@ -6,7 +6,7 @@ function nome(){
 }
 nome()
 //Função com Argumento
-function nome(a){
+function nome1(a){
     console.log(a)
 }
 nome1('Ola, Mundo')
