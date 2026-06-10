@@ -50,7 +50,7 @@ parOuImpar()*/
 }
 parOuImpar()*/
 
-function celsiusFahrenheit(){
+/*function celsiusFahrenheit(){
 
     // 1. Variável para a temperatura em Celsius
     const celsius = 25.8;
@@ -68,7 +68,7 @@ function celsiusFahrenheit(){
     console.log(`Temperatura em Fahrenheit Arredondado: ${arredondado}°F`);
     console.log(`O valor de Fahrenheit é: ${parOuImpar}`);
 
-    /*
+    
     1. Constantes Matemáticas O Math possui propriedades fixas que retornam constantes muito usadas em engenharia e ciência:Math.PI: Retorna o valor do \(\pi \) (Pi), aproximadamente \(3.14159\).Math.E: Retorna a base dos logaritmos naturais (número de Euler), aproximadamente \(2.718\).Math.SQRT2: Retorna a raiz quadrada de 2, aproximadamente \(1.414\).
     
     2. Funções de Arredondamento Ideais para transformar números decimais em inteiros:Math.round(x): Arredonda um número para o inteiro mais próximo (para cima se a parte decimal for \(\ge 0.5\), para baixo se for \(<0.5\)).Math.floor(x): Arredonda o número sempre para baixo (para o menor inteiro mais próximo).Math.ceil(x): Arredonda o número sempre para cima (para o maior inteiro mais próximo).
@@ -78,9 +78,48 @@ function celsiusFahrenheit(){
     4. Geração de Aleatoriedade Math.random(): Retorna um número pseudo-aleatório no intervalo entre \(0\) (inclusivo) e \(1\) (exclusivo). É muito utilizado para sortear itens, criar jogos e embaralhar dados.
     
     5. Funções Trigonométricas Úteis para computação gráfica, física e desenvolvimento de jogos:Math.sin(x): Retorna o seno de \(x\) (radianos).Math.cos(x): Retorna o cosseno de \(x\) (radianos).Math.tan(x): Retorna a tangente de \(x\) (radianos).
-    */
+    
 }
-celsiusFahrenheit()
+celsiusFahrenheit()*/
+/*
+function jurosSimples() {
+    let J
+    let M
+    let P = 1500
+    let i = 0.05
+    let t = 6
+    J = P*i*t
+    M = P+J
+    console.log('O valor dos juros é: ', J , ' e o valor total devolvido é: ', M)
+}
+jurosSimples()*/
+
+/*
+function jurosComposto(){
+    let M
+    let P = 2000
+    let i = 0.03
+    let t = 12
+    M = P * (1 + i) ** t
+    console.log('O saldo após 12 meses será: ', M.toFixed(2)) 
+}
+jurosComposto()*/
+
+/*
+function maioridade(){
+    let idade = 15
+    const maior = 18
+    if(idade > maior){
+        console.log('Idade maior que 18')
+    }else if(idade === maior){
+        console.log('Idade igual a 18')
+    }else{
+        console.log('Idade menor que 18')
+    }
+}
+maioridade()*/
+
+
 
 
 
