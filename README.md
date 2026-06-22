@@ -1,6 +1,6 @@
 📘 Curso Full Stack — Senac Bauru
 
-Bem-vindo(a) ao repositório oficial do Curso de Desenvolvimento Full Stack do Senac Bauru.
+Bem-vindo(a) ao repositório do Curso de Desenvolvimento Full Stack do Senac Bauru.
 
 📌 Sobre este repositório
 Este repositório foi criado para apoiar os alunos durante o período do curso, reunindo:
