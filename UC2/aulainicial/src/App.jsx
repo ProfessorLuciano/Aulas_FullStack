@@ -8,6 +8,7 @@ export default function App() {
     <>
       <div className='conteinerGeralApp'>
         <h1>Site de Informática</h1>
+        <h1>Site de Informática2</h1>
         <img src={Logo} alt="" />
       </div>
     </>
