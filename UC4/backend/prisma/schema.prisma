@@ -16,7 +16,7 @@ datasource db {
 model Usuarios {
   id       String  @id @default(uuid())
   nome     String
-  email    String
+  email    String  @unique
   senha    String
   telefone String
   status   Boolean @default(true)
