@@ -228,11 +228,11 @@
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
-  <table-pane table-ref="TAB1" x="1079" y="521" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="true"/>
-  <table-pane table-ref="TAB12" x="291" y="412" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="true"/>
+  <table-pane table-ref="TAB1" x="1079" y="521" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB12" x="291" y="412" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB25" x="543" y="150" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="true"/>
   <table-pane table-ref="TAB39" x="999" y="150" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="true"/>
-  <table-pane table-ref="TAB50" x="751" y="399" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="true"/>
+  <table-pane table-ref="TAB50" x="751" y="399" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-link relationship-ref="REL63" pkConnection="0.463768115942029" fkConnection="0.48427672955974843" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL59" pkConnection="0.44711538461538464" fkConnection="0.5393258426966292" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
   <table-link relationship-ref="REL61" pkConnection="0.4712041884816754" fkConnection="0.5275590551181102" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>

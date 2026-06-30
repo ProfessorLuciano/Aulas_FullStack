@@ -1,0 +1,136 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1749488877645
+  modified: 1749488877645
+  description: ""
+collection:
+  - name: CRUD
+    meta:
+      id: fld_08f2b1dd05cb4ccda7182d206c5f23d8
+      created: 1781632485001
+      modified: 1781632485001
+      sortKey: -1781632485001
+      description: ""
+    children:
+      - name: CEP
+        meta:
+          id: fld_9b8b214db0b74dbab89ca751138e0858
+          created: 1781632494424
+          modified: 1781632494424
+          sortKey: -1781632494424
+          description: ""
+        children:
+          - url: https://viacep.com.br/ws/17015040/json
+            name: Via CEP
+            meta:
+              id: req_e43f77d667ab421f94c7206cfbe9b32f
+              created: 1780430914637
+              modified: 1781632499636
+              isPrivate: false
+              description: ""
+              sortKey: -1781632499611
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Usuarios
+        meta:
+          id: fld_372ed0cb4a50415d9402f3ebeb7f57dc
+          created: 1781632646667
+          modified: 1781632646667
+          sortKey: -1781632646667
+          description: ""
+        children:
+          - url: http://localhost:3333/CadastrarUsuarios
+            name: "Cadastrar Usuários "
+            meta:
+              id: req_802f1a5d1c2a4a849491cc0af2a3f6e0
+              created: 1781638339901
+              modified: 1782844556508
+              isPrivate: false
+              description: ""
+              sortKey: -1781638339901
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"nome": "Luciano",
+                	"email": "luciano@teste.com.br",
+                	"senha": "123456",
+                	"telefone": "(11) 1111-1111",
+                	"id_cargos": "123456"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Cargos
+        meta:
+          id: fld_4ed7ee3137c2493c9b43650a4443944b
+          created: 1782848470590
+          modified: 1782848470590
+          sortKey: -1782848470590
+          description: ""
+        children:
+          - url: http://localhost:3333/CadastrarCargos
+            name: Cadastrar Cargos
+            meta:
+              id: req_4afcc03742744944bb8b55ef7b3e9c39
+              created: 1782848516755
+              modified: 1782849203205
+              isPrivate: false
+              description: ""
+              sortKey: -1782848516755
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"nome": "Vendedor"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1749488882399
+    modified: 1749488882399
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1749488882330
+    modified: 1749488882330
+    isPrivate: false

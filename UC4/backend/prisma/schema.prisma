@@ -21,8 +21,23 @@ model Usuarios {
   telefone String
   status   Boolean @default(true)
 
+  cargos Cargos @relation(fields: [id_cargos], references: [id])
+  id_cargos String
+
   data_criacao     DateTime @default(now())
   data_atualizacao DateTime @updatedAt
 
   @@map("usuarios")
+}
+
+model Cargos {
+  id   String @id @default(uuid())
+  nome String
+
+  usuarios Usuarios[]
+
+  data_criacao     DateTime @default(now())
+  data_atualizacao DateTime @updatedAt
+
+  @@map("cargos")
 }

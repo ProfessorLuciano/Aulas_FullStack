@@ -4,11 +4,12 @@ interface CadUsuarios {
     nome: string,
     email: string,
     senha: string,
-    telefone: string
+    telefone: string,
+    id_cargos: string
 }
 
 class UsuariosServices {
-    async cadastrarUsuarios({ nome, email, senha, telefone }: CadUsuarios) {
+    async cadastrarUsuarios({ nome, email, senha, telefone, id_cargos }: CadUsuarios) {
         
         const emailExiste = await prismaClient.usuarios.findFirst({
             where: {
@@ -25,7 +26,8 @@ class UsuariosServices {
                 nome: nome,
                 email: email,
                 senha: senha,
-                telefone: telefone
+                telefone: telefone,
+                id_cargos: id_cargos
             }
         })
 
