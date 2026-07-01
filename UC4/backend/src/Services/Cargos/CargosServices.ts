@@ -2,7 +2,12 @@ import prismaClient from '../../Prisma/PrismaClient'
 
 class CargosServices {
     async cadastrarCargos(nome: string){
-        console.log(nome)
+       const resposta = await prismaClient.cargos.create({
+        data: {
+            nome: nome
+        }
+       })
+       return resposta
     }
 }
 
