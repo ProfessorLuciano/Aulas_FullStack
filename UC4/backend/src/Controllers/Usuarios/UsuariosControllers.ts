@@ -15,6 +15,12 @@ class UsuariosControllers {
         })
         return res.json(resposta)
     }
+
+    async visualizarDadosGeral(req: Request, res: Response){
+        const enviarDados = new UsuariosServices()
+        const resposta = await enviarDados.visualizarDadosGeral()
+        return res.json(resposta)
+    }
 }
 
 export { UsuariosControllers }

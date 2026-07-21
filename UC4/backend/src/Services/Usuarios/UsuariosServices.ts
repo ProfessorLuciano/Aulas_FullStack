@@ -34,6 +34,11 @@ class UsuariosServices {
         return ({ dados: 'Dados Salvo Com Sucesso' })
     }
 
+    async visualizarDadosGeral(){
+        const resposta = await prismaClient.usuarios.findMany()
+        return resposta
+    }
+
 }
 
 export { UsuariosServices }
