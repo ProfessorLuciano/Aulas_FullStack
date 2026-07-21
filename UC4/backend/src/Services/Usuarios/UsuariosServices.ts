@@ -10,17 +10,17 @@ interface CadUsuarios {
 
 class UsuariosServices {
     async cadastrarUsuarios({ nome, email, senha, telefone, id_cargos }: CadUsuarios) {
-        
+
         const emailExiste = await prismaClient.usuarios.findFirst({
             where: {
                 email: email
             }
         })
 
-        if(emailExiste){
+        if (emailExiste) {
             throw new Error('E-mail já Cadastrado')
         }
-        
+
         await prismaClient.usuarios.create({
             data: {
                 nome: nome,
@@ -34,8 +34,32 @@ class UsuariosServices {
         return ({ dados: 'Dados Salvo Com Sucesso' })
     }
 
-    async visualizarDadosGeral(){
-        const resposta = await prismaClient.usuarios.findMany()
+    async visualizarDadosGeral() {
+        const resposta = await prismaClient.usuarios.findMany({
+            select: {
+                id: true,
+                nome: true,
+                email: true,
+                telefone: true,
+                status: true
+            }
+        })
+        return resposta
+    }
+
+    async visualizarUsuarioUnicoPost(id: string) {
+        const resposta = await prismaClient.usuarios.findFirst({
+            where: {
+                id: id
+            },
+            select: {
+                id: true,
+                nome: true,
+                email: true,
+                telefone: true,
+                status: true
+            }
+        })
         return resposta
     }
 
