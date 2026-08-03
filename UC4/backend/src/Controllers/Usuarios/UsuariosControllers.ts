@@ -35,6 +35,11 @@ class UsuariosControllers {
         const resposta = await enviarDados.visualizarUsuarioUnicoGet(id)
         return res.json(resposta)
     }
+
+    async alterarUsuarios(req: Request, res: Response) {
+        const { id, nome, email, telefone, id_cargos } = req.body
+        console.log(id, nome, email, telefone, id_cargos)
+    }
 }
 
 export { UsuariosControllers }

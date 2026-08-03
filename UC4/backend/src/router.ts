@@ -10,8 +10,8 @@ const router = Router()
 //Rotas de Usuarios
 router.post('/CadastrarUsuarios', new UsuariosControllers().cadastrarUsuarios)
 router.post('/VisualizarUsuarioUnicoPost', new UsuariosControllers().visualizarUsuarioUnicoPost)
+router.put('/AlterarUsuarios', new UsuariosControllers().alterarUsuarios)
 router.get('/VisualizarUsuarioUnicoGet/:id', new UsuariosControllers().visualizarUsuarioUnicoGet)
-
 router.get('/VisualizarDadosGeral', new UsuariosControllers().visualizarDadosGeral)
 
 //Rotas de Cargos

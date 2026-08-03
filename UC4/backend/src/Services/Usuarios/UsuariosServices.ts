@@ -41,12 +41,7 @@ class UsuariosServices {
                 nome: true,
                 email: true,
                 telefone: true,
-                status: true,
-                cargos: {
-                    select: {
-                        nome: true
-                    }
-                }
+                status: true
             }
         })
         return resposta
