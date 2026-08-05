@@ -13,6 +13,7 @@ router.post('/VisualizarUsuarioUnicoPost', new UsuariosControllers().visualizarU
 router.put('/AlterarUsuarios', new UsuariosControllers().alterarUsuarios)
 router.get('/VisualizarUsuarioUnicoGet/:id', new UsuariosControllers().visualizarUsuarioUnicoGet)
 router.get('/VisualizarDadosGeral', new UsuariosControllers().visualizarDadosGeral)
+router.delete('/ApagarUsuarios', new UsuariosControllers().apagarUsuarios)
 
 //Rotas de Cargos
 router.post('/CadastrarCargos', new CargosControllers().cadastrarCargos)

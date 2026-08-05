@@ -37,15 +37,23 @@ class UsuariosControllers {
     }
 
     async alterarUsuarios(req: Request, res: Response) {
-        const { id, nome, email, telefone, id_cargos } = req.body
+        const { id, nome, email, telefone, status, id_cargos } = req.body
         const enviarDados = new UsuariosServices()
         const resposta = await enviarDados.alterarUsuarios({
             id,
             nome,
             email,
             telefone,
+            status,
             id_cargos
         })
+        return res.json(resposta)
+    }
+
+    async apagarUsuarios(req: Request, res: Response) {
+        const { id } = req.body
+        const enviarDados = new UsuariosServices()
+        const resposta = await enviarDados.apagarUsuarios(id)
         return res.json(resposta)
     }
 }
