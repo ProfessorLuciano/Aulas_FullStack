@@ -90,7 +90,7 @@ class UsuariosServices {
 
     async alterarUsuarios({ id, nome, email, telefone, status, id_cargos }: AltUsuarios) {
 
-        /*const idExiste = await prismaClient.usuarios.findFirst({
+        const idExiste = await prismaClient.usuarios.findFirst({
             where :{ 
                 id: id
             }
@@ -98,7 +98,7 @@ class UsuariosServices {
 
         if(!idExiste){
             throw new Error ('Registro não Encontrado')
-        }*/
+        }
 
         await prismaClient.usuarios.update({
             where: {
