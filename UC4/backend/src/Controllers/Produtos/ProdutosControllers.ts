@@ -1,9 +1,22 @@
 import { Request, Response } from 'express'
+import { ProdutosServices } from '../../Services/Produtos/ProdutosServices'
 
 class ProdutosControllers {
     async cadastrarProdutos(req: Request, res: Response){
         const { nome, preco, quantidade} = req.body
-        console.log(nome, preco, quantidade)
+        if(!req.file){
+            throw new Error('Arquivo com Problemas')
+        }else{
+            const {originalname, filename: banner} = req.file
+            const enviarDados = new ProdutosServices()
+            const resposta = await enviarDados.cadastrarProdutos({
+                nome,
+                preco,
+                quantidade,
+                banner
+            })
+            return res.json(resposta)
+        }
     }
 }
 
