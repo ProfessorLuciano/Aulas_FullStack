@@ -25,6 +25,7 @@ router.post('/CadastrarCargos', new CargosControllers().cadastrarCargos)
 
 //Rotas de Produtos
 router.post('/CadastrarProdutos', upload.single('file'), new ProdutosControllers().cadastrarProdutos)
+router.get('/VisualizarProdutos', new ProdutosControllers().visualizarProdutosGeral)
 
 
 export default router

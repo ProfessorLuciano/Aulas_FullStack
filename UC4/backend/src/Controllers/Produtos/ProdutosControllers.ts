@@ -18,6 +18,13 @@ class ProdutosControllers {
             return res.json(resposta)
         }
     }
+
+    async visualizarProdutosGeral(req: Request, res: Response){
+        const enviarDados = new ProdutosServices()
+        const resposta = await enviarDados.visualizarProdutosGeral()
+        return res.json(resposta)
+    }
+    
 }
 
 export { ProdutosControllers }
