@@ -1,4 +1,5 @@
 import prismaClient from '../../Prisma/PrismaClient'
+import { hash } from 'bcryptjs'
 
 interface CadUsuarios {
     nome: string,
@@ -30,11 +31,13 @@ class UsuariosServices {
             throw new Error('E-mail já Cadastrado')
         }
 
+        const senhaHash = await hash(senha, 8)
+
         await prismaClient.usuarios.create({
             data: {
                 nome: nome,
                 email: email,
-                senha: senha,
+                senha: senhaHash,
                 telefone: telefone,
                 id_cargos: id_cargos
             }
@@ -91,13 +94,13 @@ class UsuariosServices {
     async alterarUsuarios({ id, nome, email, telefone, status, id_cargos }: AltUsuarios) {
 
         const idExiste = await prismaClient.usuarios.findFirst({
-            where :{ 
+            where: {
                 id: id
             }
         })
 
-        if(!idExiste){
-            throw new Error ('Registro não Encontrado')
+        if (!idExiste) {
+            throw new Error('Registro não Encontrado')
         }
 
         await prismaClient.usuarios.update({
@@ -123,8 +126,8 @@ class UsuariosServices {
             }
         })
 
-        if(!idExiste){
-            throw new Error ('Registro não Encontrado')
+        if (!idExiste) {
+            throw new Error('Registro não Encontrado')
         }
 
         await prismaClient.usuarios.delete({
