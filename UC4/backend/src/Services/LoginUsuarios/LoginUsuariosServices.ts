@@ -8,7 +8,6 @@ interface LogarUsuarios {
 
 class LogarUsuariosServices {
     async logarUsuarios({ email, senha }: LogarUsuarios) {
-        console.log(senha)
         const emailExiste = await prismaClient.usuarios.findFirst({
             where: {
                 email: email
@@ -22,7 +21,6 @@ class LogarUsuariosServices {
         if(!senhaCrypt){
             throw new Error('Senha Incorretos')
         }
-
     }
 }
 
