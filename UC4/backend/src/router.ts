@@ -6,6 +6,7 @@ import uploadConfig from './config/multer'
 import { UsuariosControllers } from './Controllers/Usuarios/UsuariosControllers'
 import { CargosControllers } from './Controllers/Cargos/CargosControllers'
 import { ProdutosControllers } from './Controllers/Produtos/ProdutosControllers'
+import { LoginUsuariosControllers } from './Controllers/LoginUsuarios/LoginUsuariosControllers'
 
 const router = Router()
 
@@ -19,6 +20,7 @@ router.put('/AlterarUsuarios', new UsuariosControllers().alterarUsuarios)
 router.get('/VisualizarUsuarioUnicoGet/:id', new UsuariosControllers().visualizarUsuarioUnicoGet)
 router.get('/VisualizarDadosGeral', new UsuariosControllers().visualizarDadosGeral)
 router.delete('/ApagarUsuarios', new UsuariosControllers().apagarUsuarios)
+router.post('/LoginUsuarios', new LoginUsuariosControllers().logarUsuarios)
 
 //Rotas de Cargos
 router.post('/CadastrarCargos', new CargosControllers().cadastrarCargos)
