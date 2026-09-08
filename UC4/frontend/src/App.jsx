@@ -3,7 +3,10 @@ import './App.scss'
 
 export default function App() {
 
-  const array = [{nome: 'luciano', telefone: '11111111'}]
+  const array = [
+    {nome: 'luciano', telefone: '11111111'},
+    {nome: 'custodio', telefone: '22222222'}
+  ]
   
 
   return (
