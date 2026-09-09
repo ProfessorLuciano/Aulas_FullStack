@@ -3,34 +3,12 @@ import 'express-async-errors'
 import cors from 'cors'
 import router from './router'
 import path from 'path'
-import swaggerUi from 'swagger-ui-express'
-import swaggerJsDoc from 'swagger-jsdoc'
 
-const swaggerOptions = {
-    swaggerDefinition: {
-        openapi: '3.0.0',
-        info: {
-            title: 'API Documentação',
-            version: '1.0.0',
-            description: 'Documentação da API',
-        },
-        servers: [
-            {
-                url: 'http://localhost:3333',
-            },
-        ],
-    },
-    apis: ['./src/router.ts', './dist/router.js'],
-}
-
-const swaggerDocs = swaggerJsDoc(swaggerOptions)
 const app = express()
 app.use(express.json())
 app.use(cors())
-
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs))
-
 app.use(router)
+
 app.use(
     '/files',
     express.static(path.resolve(__dirname, '..', 'tmp'))
