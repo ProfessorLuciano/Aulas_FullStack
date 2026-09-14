@@ -15,12 +15,12 @@ class LogarUsuariosServices {
             }
         })
         if (!emailExiste) {
-            throw new Error('Email Incorretos')
+            throw new Error('Email Incorreto')
         }
 
         const senhaCrypt = await compare(senha, emailExiste.senha)
         if (!senhaCrypt) {
-            throw new Error('Senha Incorretos')
+            throw new Error('Senha Incorreto')
         }
 
         const token = sign({

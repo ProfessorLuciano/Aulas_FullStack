@@ -3,13 +3,17 @@ import { LogarUsuariosServices } from '../../Services/LoginUsuarios/LoginUsuario
 
 
 class LoginUsuariosControllers {
-    async logarUsuarios(req: Request, res: Response){
+    async logarUsuarios(req: Request, res: Response) {
         const { email, senha } = req.body
         const enviarDados = new LogarUsuariosServices()
-        const resposta = await enviarDados.logarUsuarios({
-            email, senha
-        })
-        return res.json(resposta)
+        try {
+            const resposta = await enviarDados.logarUsuarios({
+                email, senha
+            })
+            return res.json(resposta)
+        } catch (error: any) {
+            return  res.status(401).json({ error: error.message })
+        }
     }
 }
 
