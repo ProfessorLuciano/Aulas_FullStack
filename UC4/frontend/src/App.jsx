@@ -4,7 +4,7 @@ import apiLocal from './Api/apiLocal'
 export default function App() {
 
   const email = 'lucianosc1@teste.com.br'
-  const senha = '1234561'
+  const senha = '123456'
 
   async function logarUsuarios() {
     try {
@@ -12,6 +12,7 @@ export default function App() {
         email,
         senha
       })
+      localStorage.setItem('@token', JSON.stringify(resposta.data.token))
       console.log(resposta)
     } catch (err) {
       // 1. O error do Express fica guardado dentro de err.resposta.data
@@ -29,12 +30,40 @@ export default function App() {
     }
   }
 
+  async function consultarUsuarios() {
+    try {
+        const itoken = localStorage.getItem('@token')
+        const token = JSON.parse(itoken)
+        const resposta = await apiLocal.get('/VisualizarDadosGeral', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        console.log(resposta)
+    } catch (err) {
+
+    }
+  }
+
+  function limparLocalStorage(){
+    localStorage.clear()
+  }
+
   return (
     <>
       <div>
         <h1>Front com API</h1>
 
-        <button onClick={logarUsuarios}>Logar</button>
+        <form action="">
+          <input type="text" placeholder='Digite o Email' />
+          <input type="text" placeholder='Digite a Senha' />
+        </form>
+
+        <button onClick={logarUsuarios}>Logar Usuários</button>
+        <button onClick={consultarUsuarios} >Consultar Usuários</button>
+        <button>Cadastrar Usuarios</button>
+        <button>Consultar Produtos</button>
+        <button onClick={limparLocalStorage} >Sair Sistema</button>
       </div>
     </>
   )

@@ -20,7 +20,7 @@ class LogarUsuariosServices {
 
         const senhaCrypt = await compare(senha, emailExiste.senha)
         if (!senhaCrypt) {
-            throw new Error('Senha Incorreto')
+            throw new Error('Senha Incorreta')
         }
 
         const token = sign({
