@@ -3,10 +3,29 @@ import apiLocal from './Api/apiLocal'
 
 export default function App() {
 
-  const email = 'lucianosc1@teste.com.br'
-  const senha = '123456'
+  async function cadastrarCargos() {
+    //Constante de Cadastro de cargos
+    const nome = 'Caixa'
+    try {
+      const itoken = localStorage.getItem('@token')
+      const token = JSON.parse(itoken)
+      const resposta = await apiLocal.post('/CadastrarCargos', {
+        nome
+      }, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      console.log(resposta)
+    } catch (err) {
+
+    }
+  }
 
   async function logarUsuarios() {
+    //Cosntantes de Login
+    const email = 'lucianosc1@teste.com.br'
+    const senha = '123456'
     try {
       const resposta = await apiLocal.post('/LoginUsuarios', {
         email,
@@ -32,20 +51,20 @@ export default function App() {
 
   async function consultarUsuarios() {
     try {
-        const itoken = localStorage.getItem('@token')
-        const token = JSON.parse(itoken)
-        const resposta = await apiLocal.get('/VisualizarDadosGeral', {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        })
-        console.log(resposta)
+      const itoken = localStorage.getItem('@token')
+      const token = JSON.parse(itoken)
+      const resposta = await apiLocal.get('/VisualizarDadosGeral', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      console.log(resposta)
     } catch (err) {
 
     }
   }
 
-  function limparLocalStorage(){
+  function limparLocalStorage() {
     localStorage.clear()
   }
 
@@ -53,18 +72,18 @@ export default function App() {
     <>
       <div>
         <h1>Front com API</h1>
-
         <form action="">
           <input type="text" placeholder='Digite o Email' />
-          <input type="text" placeholder='Digite a Senha' />
+          <input type="password" placeholder='Digite a Senha' />
         </form>
-
         <button onClick={logarUsuarios}>Logar Usuários</button>
         <button onClick={consultarUsuarios} >Consultar Usuários</button>
+        <button onClick={cadastrarCargos}>Cadastrar Cargos</button>
         <button>Cadastrar Usuarios</button>
         <button>Consultar Produtos</button>
         <button onClick={limparLocalStorage} >Sair Sistema</button>
       </div>
+
     </>
   )
 }

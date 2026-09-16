@@ -224,7 +224,7 @@ router.post('/LoginUsuarios', new LoginUsuariosControllers().logarUsuarios)
  *       200:
  *         description: Sucesso
  */
-router.post('/CadastrarCargos', estaAutenticado, new CargosControllers().cadastrarCargos)
+router.post('/CadastrarCargos', new CargosControllers().cadastrarCargos)
 
 /**
  * @swagger

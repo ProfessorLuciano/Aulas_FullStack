@@ -5,6 +5,7 @@ import { CargosServices } from '../../Services/Cargos/CargosServices'
 class CargosControllers {
     async cadastrarCargos(req: Request, res: Response) {
         const { nome } = req.body
+        console.log(nome)
         const enviarDadosServices = new CargosServices()
         const resposta = await enviarDadosServices.cadastrarCargos(nome)
         return res.json(resposta)
