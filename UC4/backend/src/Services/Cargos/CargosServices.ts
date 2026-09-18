@@ -13,6 +13,11 @@ class CargosServices {
         })
         return resposta
     }
+
+    async visualizarCargosGeral(){
+        const resposta = await prismaClient.cargos.findMany()
+        return resposta
+    }
 }
 
 export { CargosServices }

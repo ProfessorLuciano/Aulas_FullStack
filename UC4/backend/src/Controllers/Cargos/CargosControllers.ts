@@ -10,6 +10,12 @@ class CargosControllers {
         const resposta = await enviarDadosServices.cadastrarCargos(nome)
         return res.json(resposta)
     }
+
+    async visualizarCargosGeral(req: Request, res: Response){
+        const enviarDados = new CargosServices()
+        const resposta = await enviarDados.visualizarCargosGeral()
+        return res.json(resposta)
+    }
 }
 
 export { CargosControllers }

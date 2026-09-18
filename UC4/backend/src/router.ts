@@ -226,6 +226,9 @@ router.post('/LoginUsuarios', new LoginUsuariosControllers().logarUsuarios)
  */
 router.post('/CadastrarCargos', new CargosControllers().cadastrarCargos)
 
+
+router.get('/VisualizarCargosGeral', new CargosControllers().visualizarCargosGeral)
+
 /**
  * @swagger
  * tags:

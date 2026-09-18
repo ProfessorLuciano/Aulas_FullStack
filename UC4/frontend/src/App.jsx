@@ -1,11 +1,21 @@
+import { useState, useEffect } from 'react'
 import './App.scss'
 import apiLocal from './Api/apiLocal'
 
 export default function App() {
 
+  const [nome, setNome] = useState('')
+  const [cargos, setCargos] = useState([''])
+
+  useEffect(() => {
+    async function visualizarCargosGeral() {
+      const resposta = await apiLocal.get('/VisualizarCargosGeral')
+      setCargos(resposta.data)
+    }
+    visualizarCargosGeral()
+  }, [])
+
   async function cadastrarCargos() {
-    //Constante de Cadastro de cargos
-    const nome = 'Caixa'
     try {
       const itoken = localStorage.getItem('@token')
       const token = JSON.parse(itoken)
@@ -58,7 +68,7 @@ export default function App() {
           Authorization: `Bearer ${token}`
         }
       })
-      console.log(resposta)
+      console.log(resposta.data)
     } catch (err) {
 
     }
@@ -72,14 +82,35 @@ export default function App() {
     <>
       <div>
         <h1>Front com API</h1>
-        <form action="">
-          <input type="text" placeholder='Digite o Email' />
-          <input type="password" placeholder='Digite a Senha' />
+        <form onSubmit={cadastrarCargos}>
+          <input
+            type="text"
+            placeholder='Digite o Cargo'
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+          />
+          <button type='submit'>Cadastrar Cargos</button>
         </form>
+
+        <form>
+          <select>
+            <option value="">Selecione o Cargo</option>
+            {cargos.map((item) => {
+              return(
+                <>
+                <option value="">{item.nome}</option>
+                </>
+              )
+            })}
+          </select>
+
+
+          <button type='submit'>Cadastrar Usuários</button>
+        </form>
+
+
         <button onClick={logarUsuarios}>Logar Usuários</button>
-        <button onClick={consultarUsuarios} >Consultar Usuários</button>
-        <button onClick={cadastrarCargos}>Cadastrar Cargos</button>
-        <button>Cadastrar Usuarios</button>
+        <button onClick={consultarUsuarios}>Consultar Usuarios</button>
         <button>Consultar Produtos</button>
         <button onClick={limparLocalStorage} >Sair Sistema</button>
       </div>
