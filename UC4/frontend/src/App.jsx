@@ -4,8 +4,16 @@ import apiLocal from './Api/apiLocal'
 
 export default function App() {
 
-  const [nome, setNome] = useState('')
+  const [nomeCargos, setNomeCargos] = useState('')
   const [cargos, setCargos] = useState([''])
+
+  const [nome, setNome] = useState('')
+  const [email, setEmail] = useState('')
+  const [senha, setSenha] = useState('')
+  const [telefone, setTelefone] = useState('')
+  const [id_cargos, setIdCargos] = useState('')
+
+  const [usuarios, setUsuarios] = useState([''])
 
   useEffect(() => {
     async function visualizarCargosGeral() {
@@ -16,6 +24,7 @@ export default function App() {
   }, [])
 
   async function cadastrarCargos() {
+    const nome = nomeCargos
     try {
       const itoken = localStorage.getItem('@token')
       const token = JSON.parse(itoken)
@@ -34,7 +43,7 @@ export default function App() {
 
   async function logarUsuarios() {
     //Cosntantes de Login
-    const email = 'lucianosc1@teste.com.br'
+    const email = 'luciano@teste.com.br'
     const senha = '123456'
     try {
       const resposta = await apiLocal.post('/LoginUsuarios', {
@@ -68,7 +77,7 @@ export default function App() {
           Authorization: `Bearer ${token}`
         }
       })
-      console.log(resposta.data)
+      setUsuarios(resposta.data)
     } catch (err) {
 
     }
@@ -76,6 +85,22 @@ export default function App() {
 
   function limparLocalStorage() {
     localStorage.clear()
+  }
+
+  async function cadastrarUsuarios(e) {
+    e.preventDefault()
+    try {
+      const resposta = await apiLocal.post('/CadastrarUsuarios', {
+        nome,
+        email,
+        senha,
+        telefone,
+        id_cargos
+      })
+      console.log(resposta)
+    } catch (err) {
+
+    }
   }
 
   return (
@@ -86,25 +111,50 @@ export default function App() {
           <input
             type="text"
             placeholder='Digite o Cargo'
-            value={nome}
-            onChange={(e) => setNome(e.target.value)}
+            value={nomeCargos}
+            onChange={(e) => setNomeCargos(e.target.value)}
           />
           <button type='submit'>Cadastrar Cargos</button>
         </form>
 
-        <form>
-          <select>
+        <form onSubmit={cadastrarUsuarios}>
+          <select
+            value={id_cargos}
+            onChange={(e) => setIdCargos(e.target.value)}
+          >
             <option value="">Selecione o Cargo</option>
             {cargos.map((item) => {
-              return(
+              return (
                 <>
-                <option value="">{item.nome}</option>
+                  <option value={item.id}>{item.nome}</option>
                 </>
               )
             })}
           </select>
-
-
+          <input
+            type="text"
+            placeholder='Digite o Nome'
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder='Digite o Email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder='Digite a Senha'
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder='Digite o Telefone'
+            value={telefone}
+            onChange={(e) => setTelefone(e.target.value)}
+          />
           <button type='submit'>Cadastrar Usuários</button>
         </form>
 
@@ -113,6 +163,29 @@ export default function App() {
         <button onClick={consultarUsuarios}>Consultar Usuarios</button>
         <button>Consultar Produtos</button>
         <button onClick={limparLocalStorage} >Sair Sistema</button>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Telefone</th>
+              <th>Ação</th>
+            </tr>
+            {usuarios.map((item) => {
+              return (
+                <>
+                  <tr>
+                    <td>{item.nome}</td>
+                    <td>{item.email}</td>
+                    <td>{item.telefone}</td>
+                    <td>Editar</td>
+                  </tr>
+                </>
+              )
+            })}
+          </thead>
+        </table>
       </div>
 
     </>
